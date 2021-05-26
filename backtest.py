@@ -1,5 +1,8 @@
+
 import talib
 from zipline.api import order_target, record, symbol, order_target_percent
+
+# %%
 
 
 def initialize(context):
@@ -33,9 +36,13 @@ def handle_data(context, data):
             order_target_percent(stock, context.target_pct_per_stock)
 
 
-# record the current RSI val;ues of each stock
+# record the current RSI values of each stock
     record(amzn_rsi=rsis[symbol('AMZN')],
-           googl_rsi=rsis[symbol('GOOGL')],
-           meli_rsi=rsis[symbol('MELI')],
-           glob_rsi=rsis[symbol('GLOB')],
-           tsla_rsi=rsis[symbol('TSLA')])
+           googl_rsi=rsis[symbol('GOOGL')]),
+    # meli_rsi=rsis[symbol('MELI')],
+    # glob_rsi=rsis[symbol('GLOB')],
+    # tsla_rsi=rsis[symbol('TSLA')]
+
+    print(record())
+
+# %%
